@@ -22,5 +22,5 @@ jobs:
 
       - name: Build the Image and Push to GHCR
         run: |
-          docker build . -t docker.pkg.github.com/santhoshprogrammer94/ng-pulumi-rnd:${{ github.sha }};
-          docker push docker.pkg.github.com/santhoshprogrammer94/ng-pulumi-rnd:${{ github.sha }}
+          docker build . -t docker.pkg.github.com/santhoshprogrammer94/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }};
+          docker push docker.pkg.github.com/santhoshprogrammer94/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }}
