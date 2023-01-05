@@ -18,7 +18,7 @@ jobs:
         with:
           registry: docker.pkg.github.com
           username: santhoshprogrammer94
-          password: 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
+          password: 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
 
       - name: Build the Image and Push to GHCR
         run: |
