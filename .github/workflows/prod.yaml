@@ -18,7 +18,7 @@ jobs:
         with:
           registry: ghcr.io
           username: santhoshprogrammer94
-          password: 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
+          password: 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
 
       - name: Build the Image and Push to GHCR
         run: |
