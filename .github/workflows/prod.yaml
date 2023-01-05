@@ -7,16 +7,20 @@ jobs:
   docker-build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Build Docker
-      run: |
-        docker build -t ghcr.io/santhoshprogrammer94/ng-pulumi-demo:$GITHUB_SHA .
-      env:
-        CI: true
-    - ​name​: ​Login to GHCR 
-​      ​uses​: ​docker/login-action@v1  
-​      ​with​: 
-        name: santhoshprogrammer94/ng-pulumi-demo:$GITHUB_SHA
-​        ​registry​: ​ghcr.io 
-​        ​username​: ​${{ secrets.GHCR_USERNAME }} 
-​        ​password​: ​${{ secrets.GHCR_TOKEN }}
+      - name: Perform checkout
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ github.repository }}
+          ref: master
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
+
+      - name: Build the Image and Push to GHCR
+        run: |
+          docker build . -t ghcr.io/${{ secrets.GHCR_USERNAME }}/ng-pulumi-rnd:${{ github.sha }};
+          docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/ng-pulumi-rnd:${{ github.sha }}
