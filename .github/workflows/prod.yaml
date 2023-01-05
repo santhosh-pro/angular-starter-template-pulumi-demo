@@ -16,11 +16,11 @@ jobs:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
         with:
-          registry: ghcr.io
+          registry: docker.pkg.github.com
           username: santhoshprogrammer94
           password: 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
 
       - name: Build the Image and Push to GHCR
         run: |
-          docker build . -t ghcr.io/santhoshprogrammer94/ng-pulumi-rnd:${{ github.sha }};
-          docker push ghcr.io/santhoshprogrammer94/ng-pulumi-rnd:${{ github.sha }}
+          docker build . -t docker.pkg.github.com/santhoshprogrammer94/ng-pulumi-rnd:${{ github.sha }};
+          docker push docker.pkg.github.com/santhoshprogrammer94/ng-pulumi-rnd:${{ github.sha }}
