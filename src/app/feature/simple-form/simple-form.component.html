@@ -1,0 +1,17 @@
+<div class="m-8">
+<div class="mb-10">
+<form [formGroup]="form" class="w-96 flex flex-col justify-center">
+    <app-text-input placeholder='Name' formControlName="name"></app-text-input>
+    <app-number-input placeholder='Age' formControlName="age"></app-number-input>
+    <app-text-input placeholder='breed' formControlName="breed"></app-text-input>
+
+    <div class="flex">
+        <app-button name="Submit" [isDisabled]="!form.valid" (click)="submit()"></app-button>
+      </div>
+</form>
+</div>
+<app-table [tableColumns]="catColumns" [tableData]="(getCatListService.getCatList$ | async)?.data?.items" [isPageable]="true" [isSortable]="false"
+[totalRows]="
+(getCatListService.getCatList$ | async)?.data?.totalCount
+"   [paginationSizes]="[2,4,6,10]" [defaultPageSize]="10"  [rowActionIcon]="'edit'"   (onPageChange)="page($event)" (deleteAction)="deleteAction($event)"></app-table>
+</div>

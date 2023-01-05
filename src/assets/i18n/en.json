@@ -1,12 +1,13 @@
 {
     "HOME": {
-      "TITLE": "Angular Starter",
+      "TITLE": "Angular Starter Pulumi Deployment Demo",
       "SELECT": "Change language"
     },
     "MENU":{
       "DASHBOARD":"Dashboard",
       "MENU1":"MEnu 1",
       "MENU2":"Menu 2",
-      "CHILDMENU1":"Child Menu 1"
+      "CHILDMENU1":"Child Menu 1",
+      "FORM":"Simple form"
     }
   }

@@ -11,23 +11,9 @@ import { SideNavOption } from 'src/app/shared/controls/side-nav/side-nav-option'
 export class LayoutComponent implements OnInit {
   menu: SideNavOption[] = [
     {
-      name: this.translate.instant('MENU.DASHBOARD'),
-      route: '/dashboard',
-    },
-    {
-      name: this.translate.instant('MENU.MENU1'),
-      route: '/',
-      children: [
-        {
-          name: this.translate.instant('MENU.MENU2'),
-          route: '/',
-        },
-      ],
-    },
-    {
-      name: this.translate.instant('MENU.CHILDMENU1'),
-      route: '/',
-    },
+      name: this.translate.instant('MENU.FORM'),
+      route: '/simple-form',
+    }
   ];
 
   constructor(private translate: TranslateService) {}

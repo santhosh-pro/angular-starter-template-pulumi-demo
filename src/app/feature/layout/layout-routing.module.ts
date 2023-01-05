@@ -6,7 +6,9 @@ const routes: Routes = [
   {
     path: '', component: LayoutComponent,
     children: [
-      { path: 'dashboard', loadChildren: () => import('../../feature/dashboard/dashboard.module').then(m => m.DashboardModule) },
+      
+        { path: '', loadChildren: () => import('../../feature/simple-form/simple-form.module').then(m => m.SimpleFormModule) },
+
     ]
   }
  

@@ -22,6 +22,7 @@ import { ConfirmDialogService } from './confirm-dialog/confirm-dialog.service';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { PopUpService } from './pop-up/pop-up.service';
 import { ReOrderTaskComponent } from './re-order-task/re-order-task.component';
+import { NumberInputComponent } from './number-input/number-input.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ReOrderTaskComponent } from './re-order-task/re-order-task.component';
     SliderComponent, 
     RadioGroupComponent, 
     SwitchComponent, 
-    TableComponent, SideNavComponent, CardComponent, TopBarComponent, ConfirmDialogComponent, PopUpComponent, ReOrderTaskComponent],
+    TableComponent, SideNavComponent, CardComponent, TopBarComponent, ConfirmDialogComponent, PopUpComponent, ReOrderTaskComponent, NumberInputComponent],
   imports: [
     CommonModule,
     AppMaterialModule,
@@ -54,7 +55,7 @@ import { ReOrderTaskComponent } from './re-order-task/re-order-task.component';
     SliderComponent, 
     RadioGroupComponent, 
     SwitchComponent, 
-    TableComponent, SideNavComponent, CardComponent, TopBarComponent, ConfirmDialogComponent, PopUpComponent, ReOrderTaskComponent
+    TableComponent, SideNavComponent, CardComponent, TopBarComponent, ConfirmDialogComponent, PopUpComponent, ReOrderTaskComponent, NumberInputComponent
   ],
   providers:[
     ConfirmDialogService,
