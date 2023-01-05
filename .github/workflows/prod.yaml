@@ -16,7 +16,7 @@ jobs:
     - name: Publish Docker
       env:
         CI: true
-        DOCKER_USERNAME: santhoshprogrammer94
+        DOCKER_USERNAME: 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
         DOCKER_PASSWORD: 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
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ghcr.io
