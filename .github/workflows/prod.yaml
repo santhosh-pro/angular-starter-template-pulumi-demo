@@ -16,8 +16,8 @@ jobs:
     - name: Publish Docker
       env:
         CI: true
-        DOCKER_USERNAME: ${{ github.repository_owner }}
-        DOCKER_PASSWORD: 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
+        DOCKER_USERNAME: ​${{ secrets.GHCR_USERNAME }} 
+        DOCKER_PASSWORD: ​${{ secrets.GHCR_TOKEN }}
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ghcr.io
         docker push ghcr.io/santhoshprogrammer94/ng-pulumi-demo:$GITHUB_SHA
