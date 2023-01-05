@@ -1,0 +1,23 @@
+name: Demo One API Development
+
+on:
+  push:
+    branches: [ master ]
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker
+      run: |
+        docker build -t ghcr.io/santhoshprogrammer94/ng-pulumi-demo:$GITHUB_SHA .
+      env:
+        CI: true
+    - name: Publish Docker
+      env:
+        CI: true
+        DOCKER_USERNAME: santhoshprogrammer94
+        DOCKER_PASSWORD: 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
+      run: |
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ghcr.io
+        docker push ghcr.io/santhoshprogrammer94/ng-pulumi-demo:$GITHUB_SHA
