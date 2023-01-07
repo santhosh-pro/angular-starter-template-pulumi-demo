@@ -7,20 +7,14 @@ jobs:
   docker-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Perform checkout
-        uses: actions/checkout@v3
-        with:
-          repository: ${{ github.repository }}
-          ref: master
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: docker.pkg.github.com
-          username: santhoshprogrammer94
-          password: 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
-
-      - name: Build the Image and Push to GHCR
-        run: |
-          docker build . -t docker.pkg.github.com/santhoshprogrammer94/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }};
-          docker push docker.pkg.github.com/santhoshprogrammer94/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }}
+    - uses: actions/checkout@v2
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: santhoshprogrammer94
+        password: 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
+    - name: Build the hello-docker Docker image
+      run: |
+        docker build . -t docker.pkg.github.com/santhoshprogrammer94/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }};
+        docker push docker.pkg.github.com/santhoshprogrammer94/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }}
