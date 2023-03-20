@@ -16,5 +16,5 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build the hello-docker Docker image
       run: |
-        docker build . -t ghcr.io/santhoshprogrammer94/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }};
-        docker push ghcr.io/santhoshprogrammer94/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }}
+        docker build . -t ghcr.io/santhosh-pro/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }};
+        docker push ghcr.io/santhosh-pro/angular-starter-template-pulumi-demo/ng-pulumi-rnd:${{ github.sha }}
